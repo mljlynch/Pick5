@@ -9,6 +9,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import styles from '../styles/baseStyles.js';
+import Login from './Login'
 import React, {Component} from 'react';
 
 export default class Signup extends Component {
@@ -57,6 +58,7 @@ export default class Signup extends Component {
     // If we are loading then we display an ActivityIndicator.
     const content = this.state.loading ? <ActivityIndicator size="large"/> :
       <View>
+        <Text>Sign Up for Pick 5!</Text>
         <TextInput
           style={styles.textInput}
           onChangeText={(text) => this.setState({email: text})}
@@ -71,6 +73,11 @@ export default class Signup extends Component {
         <TouchableHighlight onPress={this.signup.bind(this)} style={styles.primaryButton}>
           <Text style={styles.primaryButtonText}>Signup</Text>
         </TouchableHighlight>
+        <TouchableHighlight onPress={this.goToLogin.bind(this)} style={styles.transparentButton}>
+
+          <Text style={styles.transparentButtonText}>Go to Login</Text>
+
+        </TouchableHighlight>
       </View>;
 
     // A simple UI with a toolbar, and content below it.
@@ -84,7 +91,12 @@ export default class Signup extends Component {
         </View>
       </View>
                 )
-  }
+            }
+    goToLogin(){
+        this.props.navigator.push({
+        component: Login
+        });
+}
 }
 
 AppRegistry.registerComponent('Signup', () => Signup);

@@ -7,24 +7,26 @@ import {
 } from 'react-native';
 import { Navigator } from 'react-native-deprecated-custom-components'
 import Signup from './src/pages/Signup';
+import Login from './src/pages/Login';
 import * as firebase from 'firebase';
 
 const firebaseConfig = {
   apiKey:"AIzaSyB-MErPTxEUfMsWcKh7U0ZhgnbOoGAwUcw",
   authDomain: "pick5-56b5a.firebaseapp.com",
   databaseURL: "https://pick5-56b5a.firebaseio.com",
-  storageBucket:"pick5-56b5a.appspot.com"
+  storageBucket:"pick5-56b5a.appspot.com",
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export default class FirebaseAuth extends Component {
   render() {
+    
     return (
       // For now our navigator will always take us to the signup page.
-      // We will use a transition where the new page will slide in from the right.
+      // We will use a transition where the new page will slide in from the right
       <Navigator
-        initialRoute={{component: Signup}}
+        initialRoute={{component: Login}}
         configureScene={() => {
           return Navigator.SceneConfigs.FloatFromRight;
         }}
