@@ -68,7 +68,7 @@ export default class Login extends Component {
       loading: true
     });
     // Log in and display an alert to tell the user what happened.
-    this.props.firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password
+    this.props.firebaseApp.auth().signInWithEmailAndPassword(this.state.email,this.state.password
     ).then((userData) =>
     {
       this.setState({
@@ -80,10 +80,11 @@ export default class Login extends Component {
     }
     ).catch((error) =>
         {
+            var errorCode = error.message;
               this.setState({
                 loading: false
               });
-        alert('Login Failed. Please try again');
+        alert('Login Failed. Error' + errorCode);
     });
   }
 

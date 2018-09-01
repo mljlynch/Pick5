@@ -51,9 +51,6 @@ export default class Account extends Component {
           <View style={accountStyles.email_container}>
             <Text style={accountStyles.email_text}>{this.state.user.email}</Text>
           </View>
-          <Image
-            style={styles.image}
-            source={{uri: this.state.user.photoURL}} />
           <TouchableHighlight onPress={this.logout.bind(this)} style={styles.primaryButton}>
             <Text style={styles.primaryButtonText}>Logout</Text>
           </TouchableHighlight>
