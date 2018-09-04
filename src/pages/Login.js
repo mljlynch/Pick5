@@ -12,6 +12,7 @@ import React, {Component} from 'react';
 import Signup from './Signup';
 import Account from './Account';
 import styles from '../styles/baseStyles.js';
+import Home from './Home';
 
 export default class Login extends Component {
 
@@ -75,7 +76,7 @@ export default class Login extends Component {
          loading: false
         });
       this.props.navigator.push({
-        component: Account
+        component: Home
       });
     }
     ).catch((error) =>

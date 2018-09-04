@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { Navigator } from 'react-native-deprecated-custom-components'
 import Account from './src/pages/Account';
+import Home from './src/pages/Home';
 import Signup from './src/pages/Signup';
 import Login from './src/pages/Login';
 import styles from './src/styles/baseStyles'
@@ -43,7 +44,7 @@ export default class FirebaseAuth extends Component {
 
       // If the user is logged in take them to the accounts screen
       if (user != null) {
-        this.setState({page: Account});
+        this.setState({page: Home});
         return;
       }
 
@@ -91,51 +92,3 @@ export default class FirebaseAuth extends Component {
 }
 
 AppRegistry.registerComponent('FirebaseAuth', () => FirebaseAuth);
-
-// export default class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { over: 'Insert Pick - Over',  under: 'Insert Pick - Under',  favoriteSpread: 'Insert Pick - Favorite Spread',  underdogSpread: 'Insert Pick - Underdog Spread',  moneyLine: 'Insert Pick - Money Line' };
-//   }
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text>Welcome to pick5!</Text>
-//         <TextInput
-//         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-//         onChangeText={(text) => this.setState({over})}
-//         value={this.state.over}
-//       />
-//         <TextInput
-//         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-//         onChangeText={(text) => this.setState({under})}
-//         value={this.state.under}
-//         />
-//         <TextInput
-//         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-//         onChangeText={(text) => this.setState({favoriteSpread})}
-//         value={this.state.favoriteSpread}
-//         />
-//         <TextInput
-//         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-//         onChangeText={(text) => this.setState({underdogSpread})}
-//         value={this.state.underdogSpread}
-//         />
-//         <TextInput
-//         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-//         onChangeText={(text) => this.setState({moneyLine})}
-//         value={this.state.moneyLine}
-//         />
-//       </View>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
